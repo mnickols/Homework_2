@@ -1,0 +1,49 @@
+---
+title: "Homework 2"
+output:
+  pdf_document: default
+  html_notebook: default
+---
+Matthew Nickols
+
+Problem 2
+```{python}
+#Manhattan Distance function
+#Create 2 Vectors
+V1 = [1, 2, 3, 4, 5]
+V2 = [5, 4, 3, 2, 1]
+
+
+def Manhattan_Distance(X, Y):              #Take 2 vectors in
+  temp = zip(X,Y)                          #Pair vector values with zip
+  distance = sum(abs(x-y) for x, y in temp) #Calculate the distance between each pair
+  return distance                          #Return the distance
+
+Manhattan_Distance(V1, V2)
+
+from math import sqrt
+#Euclidean Distance Function
+def Euclidean_Distance(X, Y):
+  temp = zip(X,Y)
+  distance = sqrt(sum( abs(x-y)**2 for x, y in temp))
+  return distance
+
+Euclidean_Distance(V1, V2)
+
+```
+
+
+
+Problem 4
+```{r}
+#loading ggplot library
+library(ggplot2)
+
+#calculate and output the correlation with cor() between mpg and wt
+correlation = cor(mtcars$mpg, mtcars$wt)
+correlation
+
+#Create Scatter plot
+ggplot(mtcars, aes(x=wt, y=mpg)) + geom_point() + scale_x_continuous("mtcars$wt") + scale_y_continuous("mtcars$mpg") + theme_classic()
+```
+
